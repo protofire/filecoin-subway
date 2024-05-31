@@ -10,7 +10,7 @@ This is a generalized JSON RPC proxy server with features specifically designed 
 
 Pull vendors: `git submodule update --init --recursive`
 
-Quick start: `cargo run -- --config configs/config.yml`
+Quick start: `cargo run -- --config configs/eth_config.yml`
 
 This will run a proxy server with [config.yml](configs/config.yml) as the configuration file.
 

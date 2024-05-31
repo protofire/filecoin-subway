@@ -42,7 +42,7 @@ impl Extension for EthApi {
 impl EthApi {
     pub fn new(client: Arc<Client>, stale_timeout: Duration) -> Self {
         let (head_tx, head_rx) = watch::channel::<Option<(JsonValue, u64)>>(None);
-        let (finalized_head_tx, finalized_head_rx) = watch::channel::<Option<(JsonValue, u64)>>(None);
+        let (_finalized_head_tx, finalized_head_rx) = watch::channel::<Option<(JsonValue, u64)>>(None);
 
         let mut this = Self {
             inner: BaseApi::new(head_rx, finalized_head_rx),
@@ -50,7 +50,7 @@ impl EthApi {
             background_tasks: Vec::new(),
         };
 
-        this.start_background_task(client, head_tx, finalized_head_tx);
+        this.start_background_task(client, head_tx, _finalized_head_tx);
 
         this
     }
@@ -75,7 +75,7 @@ impl EthApi {
         &mut self,
         client: Arc<Client>,
         head_tx: watch::Sender<Option<(JsonValue, u64)>>,
-        finalized_head_tx: watch::Sender<Option<(JsonValue, u64)>>,
+        _finalized_head_tx: watch::Sender<Option<(JsonValue, u64)>>,
     ) {
         let stale_timeout = self.stale_timeout;
 
@@ -136,61 +136,6 @@ impl EthApi {
                 };
 
                 if let Err(e) = run.await {
-                    tracing::error!("Error in background task: {e}");
-                }
-                tokio::time::sleep(Duration::from_secs(1)).await;
-            }
-        }));
-
-        let client = client.clone();
-        self.background_tasks.push(tokio::spawn(async move {
-            let client = client.clone();
-
-            loop {
-                let run = async {
-                    let mut sub = client
-                        .subscribe("eth_subscribe", ["newFinalizedHeads".into()].into(), "eth_unsubscribe")
-                        .await?;
-
-                    loop {
-                        tokio::select! {
-                            val = sub.next() => {
-                                if let Some(Ok(val)) = val {
-                                    let number = super::get_number(&val)?;
-                                    let hash = super::get_hash(&val)?;
-
-                                    if let Err(e) = super::validate_new_head(&finalized_head_tx, number, &hash)
-                                    {
-                                        tracing::error!("Error in background task: {e}");
-                                        client.rotate_endpoint().await;
-                                        break;
-                                    }
-
-                                    tracing::debug!("New finalized head: {number} {hash}");
-                                    finalized_head_tx.send_replace(Some((hash, number)));
-                                } else {
-                                    break;
-                                }
-                            }
-                            _ = client.on_rotation() => {
-                                // endpoint is rotated, break the loop and restart subscription
-                                break;
-                            }
-                        }
-                    }
-
-                    Ok::<(), anyhow::Error>(())
-                };
-
-                if let Err(e) = run.await {
-                    // cannot figure out finalized head
-                    finalized_head_tx.send_replace(None);
-                    let msg = e.to_string().to_lowercase();
-                    if msg.contains("methodnotfound") || msg.contains("invalid") {
-                        tracing::warn!("finalized head subscription is not supported: {e}");
-                        // finalized head subscription is not supported
-                        break;
-                    }
                     tracing::error!("Error in background task: {e}");
                 }
                 tokio::time::sleep(Duration::from_secs(1)).await;
