@@ -9,13 +9,13 @@ extensions:
   telemetry:
     provider: none
   cache:
-    default_ttl_seconds: 60
+    default_ttl_seconds: 10
     default_size: 500
   merge_subscription:
     keep_alive_seconds: 60
   server:
     port: 9944
-    listen_address: '0.0.0.0'
+    listen_address: "0.0.0.0"
     max_connections: 2000
     max_batch_size: 10
     http_methods:
