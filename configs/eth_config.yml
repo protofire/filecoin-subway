@@ -1,10 +1,10 @@
 extensions:
   client:
     endpoints:
-      - wss://wss.calibration.node.glif.io/apigw/lotus/rpc/v1
+      - ${UPSTREAM_URL}
   event_bus:
   eth_api:
-    stale_timeout_seconds: 180 # rotate endpoint if no new blocks for 3 minutes
+    stale_timeout_seconds: 90 # rotate endpoint if no new blocks for 1.5 minutes
   telemetry:
     provider: none
   cache:
@@ -13,7 +13,7 @@ extensions:
   server:
     port: 8545
     listen_address: "0.0.0.0"
-    max_connections: 2000
+    max_connections: 10000
     max_batch_size: 10
     cors: all
   prometheus:
