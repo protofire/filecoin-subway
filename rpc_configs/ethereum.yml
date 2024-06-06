@@ -1,21 +1,203 @@
 methods:
-  - method: eth_blockNumber
+  - method: Fileoin.StateMinerPartitions
+  - method: Fileoin.StateMinerSectors
+  - method: Fileoin.StateMarketParticipants
+  - method: Fileoin.MpoolPending
+  - method: Fileoin.ChainGetBlock
+  - method: Fileoin.MinerGetBaseInfo
+  - method: Fileoin.GasEstimateGasPremium
+  - method: Fileoin.StateReplay
+  - method: Fileoin.StateMinerSectorCount
+  - method: Fileoin.Version
     cache:
       size: 1
-
-  - method: eth_chainId
+      ttl_seconds: 60
+  - method: Fileoin.ChainGetParentMessages
+  - method: Fileoin.ChainGetParentReceipts
+  - method: Fileoin.ChainGetBlockMessages
+  - method: Fileoin.ChainGetMessage
+  - method: Fileoin.ChainGetNode
+  - method: Fileoin.ChainGetTipSet
+  - method: Fileoin.ChainGetTipSetByHeight
+  - method: Fileoin.ChainGetTipSetAfterHeight
+  - method: Fileoin.ChainHasObj
+  - method: Fileoin.ChainHead
     cache:
       size: 1
-
-  - method: net_version
+  - method: Fileoin.ChainNotify
+  - method: Fileoin.ChainGetPath
+  - method: Fileoin.ChainReadObj
+  - method: Fileoin.ChainPutObj
+  - method: Fileoin.ChainGetGenesis
     cache:
       size: 1
-
-  - method: Filecoin.ChainHead
+      ttl_seconds: 60
+  - method: Fileoin.GasEstimateMessageGas
+  - method: Fileoin.MpoolGetNonce
+  - method: Fileoin.MpoolPushUntrusted
+  - method: Fileoin.MsigGetAvailableBalance
+  - method: Fileoin.MsigGetVested
+  - method: Fileoin.MsigGetVestingSchedule
+  - method: Fileoin.MsigGetPending
+  - method: Fileoin.StateAccountKey
+  - method: Fileoin.StateCall
+  - method: Fileoin.StateDealProviderCollateralBounds
+  - method: Fileoin.StateDecodeParams
+  - method: Fileoin.StateGetActor
+  - method: Fileoin.StateGetAllocationForPendingDeal
+  - method: Fileoin.StateGetAllocation
+  - method: Fileoin.StateGetAllocations
+  - method: Fileoin.StateGetClaim
+  - method: Fileoin.StateGetClaims
+  - method: Fileoin.StateLookupID
+  - method: Fileoin.StateListMiners
+  - method: Fileoin.StateMarketBalance
+  - method: Fileoin.StateMarketStorageDeal
+  - method: Fileoin.StateNetworkName
     cache:
       size: 1
+      ttl_seconds: 60
+  - method: Fileoin.StateNetworkVersion
+  - method: Fileoin.StateSearchMsg
+  - method: Fileoin.StateWaitMsg
+  - method: Fileoin.StateReadState
+  - method: Fileoin.StateMinerPower
+  - method: Fileoin.StateMinerFaults
+  - method: Fileoin.StateMinerRecoveries
+  - method: Fileoin.StateMinerInfo
+  - method: Fileoin.StateMinerDeadlines
+  - method: Fileoin.StateMinerAvailableBalance
+  - method: Fileoin.StateMinerProvingDeadline
+  - method: Fileoin.StateCirculatingSupply
+  - method: Fileoin.StateSectorGetInfo
+  - method: Fileoin.StateVerifiedClientStatus
+  - method: Fileoin.StateVerifierStatus
+  - method: Fileoin.StateVMCirculatingSupplyInternal
+  - method: Fileoin.WalletBalance
+  - method: Filecoin.EthAddressToFilecoinAddress
+  - method: Filecoin.FilecoinAddressToEthAddress
+  - method: Filecoin.EthBlockNumber
+    cache:
+      size: 1
+  - method: Filecoin.EthGetBlockTransactionCountByNumber
+  - method: Filecoin.EthGetBlockTransactionCountByHash
+  - method: Filecoin.EthGetBlockByHash
+  - method: Filecoin.EthGetBlockByNumber
+  - method: Filecoin.EthGetTransactionByHashLimited
+  - method: Filecoin.EthGetTransactionHashByCid
+  - method: Filecoin.EthGetMessageCidByTransactionHash
+  - method: Filecoin.EthGetTransactionCount
+  - method: Filecoin.EthGetTransactionReceiptLimited
+  - method: Filecoin.EthGetTransactionByBlockHashAndIndex
+  - method: Filecoin.EthGetTransactionByBlockNumberAndIndex
+  - method: Filecoin.EthGetCode
+  - method: Filecoin.EthGetStorageAt
+  - method: Filecoin.EthGetBalance
+  - method: Filecoin.EthChainId
+    cache:
+      size: 1
+      ttl_seconds: 60
+  - method: Filecoin.EthSyncing
+  - method: Filecoin.NetVersion
+    cache:
+      size: 1
+      ttl_seconds: 60
+  - method: Filecoin.NetListening
+    cache:
+      size: 1
+      ttl_seconds: 60
+  - method: Filecoin.EthProtocolVersion
+  - method: Filecoin.EthGasPrice
+  - method: Filecoin.EthFeeHistory
+  - method: Filecoin.EthMaxPriorityFeePerGas
+  - method: Filecoin.EthEstimateGas
+  - method: Filecoin.EthCall
+  - method: Filecoin.EthSendRawTransaction
+  - method: Filecoin.EthGetLogs
+  - method: Filecoin.EthGetFilterChanges
+  - method: Filecoin.EthGetFilterLogs
+  - method: Filecoin.EthNewFilter
+  - method: Filecoin.EthNewBlockFilter
+  - method: Filecoin.EthNewPendingTransactionFilter
+  - method: Filecoin.EthUninstallFilter
+  - method: Filecoin.EthSubscribe
+  - method: Filecoin.EthUnsubscribe
+  - method: Filecoin.Web3ClientVersion
+    cache:
+      size: 1
+      ttl_seconds: 60
+  - method: Filecoin.EthTraceBlock
+  - method: Filecoin.EthTraceReplayBlockTransactions
+  - method: Filecoin.GetActorEventsRaw
+  - method: Filecoin.SubscribeActorEventsRaw
+  - method: Filecoin.ChainGetEvents
 
 subscriptions:
   - subscribe: eth_subscribe
     unsubscribe: eth_unsubscribe
     name: eth_subscription
+
+aliases:
+  - ["Filecoin.EthBlockNumber", "eth_blockNumber"]
+  - [
+      "Filecoin.EthGetBlockTransactionCountByNumber",
+      "eth_getBlockTransactionCountByNumber",
+    ]
+  - [
+      "Filecoin.EthGetBlockTransactionCountByHash",
+      "eth_getBlockTransactionCountByHash",
+    ]
+  - ["Filecoin.EthGetBlockByHash", "eth_getBlockByHash"]
+  - ["Filecoin.EthGetBlockByNumber", "eth_getBlockByNumber"]
+  - [
+      "Filecoin.EthGetTransactionByHashLimited",
+      "eth_getTransactionByHashLimited",
+    ]
+  - ["Filecoin.EthGetTransactionHashByCid", "eth_getTransactionHashByCid"]
+  - [
+      "Filecoin.EthGetMessageCidByTransactionHash",
+      "eth_getMessageCidByTransactionHash",
+    ]
+  - ["Filecoin.EthGetTransactionCount", "eth_getTransactionCount"]
+  - [
+      "Filecoin.EthGetTransactionReceiptLimited",
+      "eth_getTransactionReceiptLimited",
+    ]
+  - [
+      "Filecoin.EthGetTransactionByBlockHashAndIndex",
+      "eth_getTransactionByBlockHashAndIndex",
+    ]
+  - [
+      "Filecoin.EthGetTransactionByBlockNumberAndIndex",
+      "eth_getTransactionByBlockNumberAndIndex",
+    ]
+  - ["Filecoin.EthGetCode", "eth_getCode"]
+  - ["Filecoin.EthGetStorageAt", "eth_getStorageAt"]
+  - ["Filecoin.EthGetBalance", "eth_getBalance"]
+  - ["Filecoin.EthChainId", "eth_chainId"]
+  - ["Filecoin.EthSyncing", "eth_syncing"]
+  - ["Filecoin.NetVersion", "net_version"]
+  - ["Filecoin.NetListening", "net_listening"]
+  - ["Filecoin.EthProtocolVersion", "eth_protocolVersion"]
+  - ["Filecoin.EthGasPrice", "eth_gasPrice"]
+  - ["Filecoin.EthFeeHistory", "eth_feeHistory"]
+  - ["Filecoin.EthMaxPriorityFeePerGas", "eth_maxPriorityFeePerGas"]
+  - ["Filecoin.EthEstimateGas", "eth_estimateGas"]
+  - ["Filecoin.EthCall", "eth_call"]
+  - ["Filecoin.EthSendRawTransaction", "eth_sendRawTransaction"]
+  - ["Filecoin.EthGetLogs", "eth_getLogs"]
+  - ["Filecoin.EthGetFilterChanges", "eth_getFilterChanges"]
+  - ["Filecoin.EthGetFilterLogs", "eth_getFilterLogs"]
+  - ["Filecoin.EthNewFilter", "eth_newFilter"]
+  - ["Filecoin.EthNewBlockFilter", "eth_newBlockFilter"]
+  - [
+      "Filecoin.EthNewPendingTransactionFilter",
+      "eth_newPendingTransactionFilter",
+    ]
+  - ["Filecoin.EthUninstallFilter", "eth_uninstallFilter"]
+  - ["Filecoin.Web3ClientVersion", "web3_clientVersion"]
+  - ["Filecoin.EthTraceBlock", "eth_traceBlock"]
+  - [
+      "Filecoin.EthTraceReplayBlockTransactions",
+      "eth_traceReplayBlockTransactions",
+    ]
