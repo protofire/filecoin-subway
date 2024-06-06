@@ -1,0 +1,9 @@
+services:
+  proxy:
+    build: .
+    image: glif/lotus:subway
+    ports:
+      - "8545:8545"
+      - "9616:9616"
+    environment:
+      - UPSTREAM_URL=wss://wss.dev.node.glif.io/rpc/v1
