@@ -183,8 +183,8 @@ impl Client {
 
                     // TODO: make those configurable
                     WsClientBuilder::default()
-                        .request_timeout(request_timeout.unwrap_or(Duration::from_secs(30)))
-                        .connection_timeout(connection_timeout.unwrap_or(Duration::from_secs(30)))
+                        .request_timeout(request_timeout.unwrap_or(Duration::from_secs(600)))
+                        .connection_timeout(connection_timeout.unwrap_or(Duration::from_secs(600)))
                         .max_buffer_capacity_per_subscription(2048)
                         .max_concurrent_requests(2048)
                         .max_response_size(20 * 1024 * 1024)
