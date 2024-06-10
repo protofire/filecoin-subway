@@ -1,79 +1,79 @@
 methods:
-  - method: Fileoin.StateMinerPartitions
-  - method: Fileoin.StateMinerSectors
-  - method: Fileoin.StateMarketParticipants
-  - method: Fileoin.MpoolPending
-  - method: Fileoin.ChainGetBlock
-  - method: Fileoin.MinerGetBaseInfo
-  - method: Fileoin.GasEstimateGasPremium
-  - method: Fileoin.StateReplay
-  - method: Fileoin.StateMinerSectorCount
-  - method: Fileoin.Version
+  - method: Filecoin.StateMinerPartitions
+  - method: Filecoin.StateMinerSectors
+  - method: Filecoin.StateMarketParticipants
+  - method: Filecoin.MpoolPending
+  - method: Filecoin.ChainGetBlock
+  - method: Filecoin.MinerGetBaseInfo
+  - method: Filecoin.GasEstimateGasPremium
+  - method: Filecoin.StateReplay
+  - method: Filecoin.StateMinerSectorCount
+  - method: Filecoin.Version
     cache:
       size: 1
       ttl_seconds: 60
-  - method: Fileoin.ChainGetParentMessages
-  - method: Fileoin.ChainGetParentReceipts
-  - method: Fileoin.ChainGetBlockMessages
-  - method: Fileoin.ChainGetMessage
-  - method: Fileoin.ChainGetNode
-  - method: Fileoin.ChainGetTipSet
-  - method: Fileoin.ChainGetTipSetByHeight
-  - method: Fileoin.ChainGetTipSetAfterHeight
-  - method: Fileoin.ChainHasObj
-  - method: Fileoin.ChainHead
+  - method: Filecoin.ChainGetParentMessages
+  - method: Filecoin.ChainGetParentReceipts
+  - method: Filecoin.ChainGetBlockMessages
+  - method: Filecoin.ChainGetMessage
+  - method: Filecoin.ChainGetNode
+  - method: Filecoin.ChainGetTipSet
+  - method: Filecoin.ChainGetTipSetByHeight
+  - method: Filecoin.ChainGetTipSetAfterHeight
+  - method: Filecoin.ChainHasObj
+  - method: Filecoin.ChainHead
     cache:
       size: 1
-  - method: Fileoin.ChainNotify
-  - method: Fileoin.ChainGetPath
-  - method: Fileoin.ChainReadObj
-  - method: Fileoin.ChainPutObj
-  - method: Fileoin.ChainGetGenesis
-    cache:
-      size: 1
-      ttl_seconds: 60
-  - method: Fileoin.GasEstimateMessageGas
-  - method: Fileoin.MpoolGetNonce
-  - method: Fileoin.MpoolPushUntrusted
-  - method: Fileoin.MsigGetAvailableBalance
-  - method: Fileoin.MsigGetVested
-  - method: Fileoin.MsigGetVestingSchedule
-  - method: Fileoin.MsigGetPending
-  - method: Fileoin.StateAccountKey
-  - method: Fileoin.StateCall
-  - method: Fileoin.StateDealProviderCollateralBounds
-  - method: Fileoin.StateDecodeParams
-  - method: Fileoin.StateGetActor
-  - method: Fileoin.StateGetAllocationForPendingDeal
-  - method: Fileoin.StateGetAllocation
-  - method: Fileoin.StateGetAllocations
-  - method: Fileoin.StateGetClaim
-  - method: Fileoin.StateGetClaims
-  - method: Fileoin.StateLookupID
-  - method: Fileoin.StateListMiners
-  - method: Fileoin.StateMarketBalance
-  - method: Fileoin.StateMarketStorageDeal
-  - method: Fileoin.StateNetworkName
+  - method: Filecoin.ChainNotify
+  - method: Filecoin.ChainGetPath
+  - method: Filecoin.ChainReadObj
+  - method: Filecoin.ChainPutObj
+  - method: Filecoin.ChainGetGenesis
     cache:
       size: 1
       ttl_seconds: 60
-  - method: Fileoin.StateNetworkVersion
-  - method: Fileoin.StateSearchMsg
-  - method: Fileoin.StateWaitMsg
-  - method: Fileoin.StateReadState
-  - method: Fileoin.StateMinerPower
-  - method: Fileoin.StateMinerFaults
-  - method: Fileoin.StateMinerRecoveries
-  - method: Fileoin.StateMinerInfo
-  - method: Fileoin.StateMinerDeadlines
-  - method: Fileoin.StateMinerAvailableBalance
-  - method: Fileoin.StateMinerProvingDeadline
-  - method: Fileoin.StateCirculatingSupply
-  - method: Fileoin.StateSectorGetInfo
-  - method: Fileoin.StateVerifiedClientStatus
-  - method: Fileoin.StateVerifierStatus
-  - method: Fileoin.StateVMCirculatingSupplyInternal
-  - method: Fileoin.WalletBalance
+  - method: Filecoin.GasEstimateMessageGas
+  - method: Filecoin.MpoolGetNonce
+  - method: Filecoin.MpoolPushUntrusted
+  - method: Filecoin.MsigGetAvailableBalance
+  - method: Filecoin.MsigGetVested
+  - method: Filecoin.MsigGetVestingSchedule
+  - method: Filecoin.MsigGetPending
+  - method: Filecoin.StateAccountKey
+  - method: Filecoin.StateCall
+  - method: Filecoin.StateDealProviderCollateralBounds
+  - method: Filecoin.StateDecodeParams
+  - method: Filecoin.StateGetActor
+  - method: Filecoin.StateGetAllocationForPendingDeal
+  - method: Filecoin.StateGetAllocation
+  - method: Filecoin.StateGetAllocations
+  - method: Filecoin.StateGetClaim
+  - method: Filecoin.StateGetClaims
+  - method: Filecoin.StateLookupID
+  - method: Filecoin.StateListMiners
+  - method: Filecoin.StateMarketBalance
+  - method: Filecoin.StateMarketStorageDeal
+  - method: Filecoin.StateNetworkName
+    cache:
+      size: 1
+      ttl_seconds: 60
+  - method: Filecoin.StateNetworkVersion
+  - method: Filecoin.StateSearchMsg
+  - method: Filecoin.StateWaitMsg
+  - method: Filecoin.StateReadState
+  - method: Filecoin.StateMinerPower
+  - method: Filecoin.StateMinerFaults
+  - method: Filecoin.StateMinerRecoveries
+  - method: Filecoin.StateMinerInfo
+  - method: Filecoin.StateMinerDeadlines
+  - method: Filecoin.StateMinerAvailableBalance
+  - method: Filecoin.StateMinerProvingDeadline
+  - method: Filecoin.StateCirculatingSupply
+  - method: Filecoin.StateSectorGetInfo
+  - method: Filecoin.StateVerifiedClientStatus
+  - method: Filecoin.StateVerifierStatus
+  - method: Filecoin.StateVMCirculatingSupplyInternal
+  - method: Filecoin.WalletBalance
   - method: Filecoin.EthAddressToFilecoinAddress
   - method: Filecoin.FilecoinAddressToEthAddress
   - method: Filecoin.EthBlockNumber
