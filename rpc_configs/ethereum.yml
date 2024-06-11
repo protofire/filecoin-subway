@@ -34,7 +34,7 @@ methods:
       ttl_seconds: 60
   - method: Filecoin.GasEstimateMessageGas
   - method: Filecoin.MpoolGetNonce
-  - method: Filecoin.MpoolPushUntrusted
+  - method: Filecoin.MpoolPush
   - method: Filecoin.MsigGetAvailableBalance
   - method: Filecoin.MsigGetVested
   - method: Filecoin.MsigGetVestingSchedule
@@ -58,6 +58,9 @@ methods:
       size: 1
       ttl_seconds: 60
   - method: Filecoin.StateNetworkVersion
+    cache:
+      size: 1
+      ttl_seconds: 60
   - method: Filecoin.StateSearchMsg
   - method: Filecoin.StateWaitMsg
   - method: Filecoin.StateReadState
@@ -131,6 +134,10 @@ methods:
   - method: Filecoin.GetActorEventsRaw
   - method: Filecoin.SubscribeActorEventsRaw
   - method: Filecoin.ChainGetEvents
+  - method: Filecoin.Discover
+  - method: Filecoin.EthAccounts
+  - method: Filecoin.EthGetTransactionByHash
+  - method: Filecoin.EthGetTransactionReceipt
 
 subscriptions:
   - subscribe: eth_subscribe
@@ -138,6 +145,9 @@ subscriptions:
     name: eth_subscription
 
 aliases:
+  - ["Filecoin.EthGetTransactionReceipt", "eth_getTransactionReceipt"]
+  - ["Filecoin.EthGetTransactionByHash", "eth_getTransactionByHash"]
+  - ["Filecoin.EthAccounts", "eth_accounts"]
   - ["Filecoin.EthBlockNumber", "eth_blockNumber"]
   - [
       "Filecoin.EthGetBlockTransactionCountByNumber",
