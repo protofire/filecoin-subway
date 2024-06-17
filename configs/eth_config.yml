@@ -11,13 +11,13 @@ extensions:
     default_ttl_seconds: 30
     default_size: 0
   server:
-    port: 8545
+    port: ${RPC_PORT}
     listen_address: "0.0.0.0"
     max_connections: 10000
     max_batch_size: 10
     cors: all
   prometheus:
-    port: 9616
+    port: ${METRICS_PORT}
     listen_address: "0.0.0.0"
     label: "dev"
 
