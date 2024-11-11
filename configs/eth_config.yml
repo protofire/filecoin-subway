@@ -14,7 +14,7 @@ extensions:
     port: ${RPC_PORT}
     listen_address: "0.0.0.0"
     max_connections: 10000
-    max_batch_size: 10
+    max_batch_size: 100
     cors: all
   prometheus:
     port: ${METRICS_PORT}
