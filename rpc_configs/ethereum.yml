@@ -135,6 +135,9 @@ methods:
   - method: Filecoin.SubscribeActorEventsRaw
   - method: Filecoin.ChainGetEvents
   - method: Filecoin.Discover
+    cache:
+      size: 1
+      ttl_seconds: 60
   - method: Filecoin.EthAccounts
   - method: Filecoin.EthGetTransactionByHash
   - method: Filecoin.EthGetTransactionReceipt
@@ -211,3 +214,4 @@ aliases:
       "Filecoin.EthTraceReplayBlockTransactions",
       "eth_traceReplayBlockTransactions",
     ]
+  - ["Filecoin.Discover", "rpc.discover"]
