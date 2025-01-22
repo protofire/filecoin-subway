@@ -141,6 +141,8 @@ methods:
   - method: Filecoin.EthAccounts
   - method: Filecoin.EthGetTransactionByHash
   - method: Filecoin.EthGetTransactionReceipt
+  - method: Filecoin.EthGetBlockReceipts
+  - method: Filecoin.EthGetBlockReceiptsLimited
 
 subscriptions:
   - subscribe: eth_subscribe
@@ -148,6 +150,8 @@ subscriptions:
     name: eth_subscription
 
 aliases:
+  - ["Filecoin.EthGetBlockReceipts", "eth_getBlockReceipts"]
+  - ["Filecoin.EthGetBlockReceiptsLimited", "eth_getBlockReceiptsLimited"]
   - ["Filecoin.EthGetTransactionReceipt", "eth_getTransactionReceipt"]
   - ["Filecoin.EthGetTransactionByHash", "eth_getTransactionByHash"]
   - ["Filecoin.EthAccounts", "eth_accounts"]
