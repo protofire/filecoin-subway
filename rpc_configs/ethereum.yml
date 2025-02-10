@@ -145,6 +145,7 @@ methods:
   - method: Filecoin.EthGetBlockReceiptsLimited
   - method: Filecoin.EthTraceTransaction
   - method: Filecoin.EthTraceFilter
+  - method: Filecoin.StateChangedActors
 
 subscriptions:
   - subscribe: eth_subscribe
