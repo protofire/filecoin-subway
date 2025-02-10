@@ -143,6 +143,8 @@ methods:
   - method: Filecoin.EthGetTransactionReceipt
   - method: Filecoin.EthGetBlockReceipts
   - method: Filecoin.EthGetBlockReceiptsLimited
+  - method: Filecoin.EthTraceTransaction
+  - method: Filecoin.EthTraceFilter
 
 subscriptions:
   - subscribe: eth_subscribe
@@ -213,9 +215,11 @@ aliases:
     ]
   - ["Filecoin.EthUninstallFilter", "eth_uninstallFilter"]
   - ["Filecoin.Web3ClientVersion", "web3_clientVersion"]
-  - ["Filecoin.EthTraceBlock", "eth_traceBlock"]
+  - ["Filecoin.EthTraceBlock", "trace_block"]
   - [
       "Filecoin.EthTraceReplayBlockTransactions",
-      "eth_traceReplayBlockTransactions",
+      "trace_replayBlockTransactions",
     ]
+  - ["Filecoin.EthTraceFilter", "trace_filter"]
+  - ["Filecoin.EthTraceTransaction", "trace_transaction"]
   - ["Filecoin.Discover", "rpc.discover"]
