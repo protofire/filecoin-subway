@@ -146,6 +146,7 @@ methods:
   - method: Filecoin.EthTraceTransaction
   - method: Filecoin.EthTraceFilter
   - method: Filecoin.StateChangedActors
+  - method: Filecoin.StateLookupRobustAddress
 
 subscriptions:
   - subscribe: eth_subscribe
